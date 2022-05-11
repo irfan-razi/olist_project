@@ -1,0 +1,45 @@
+2022-04-11/04:16:48		Connection Established.
+2022-04-11/04:17:08		All the Data has been downloaded from the table olist1
+2022-04-11/04:17:08		All the Data has been downloaded from the table olist1 successfully.
+2022-04-11/04:17:08		Connection closed...
+2022-04-11/04:17:08		All the Data has been downloaded from the table olist1
+2022-04-11/04:19:52		Connection Established.
+2022-04-11/04:21:46		All the Data has been downloaded from the table olist
+2022-04-11/04:21:46		All the Data has been downloaded from the table olist successfully.
+2022-04-11/04:21:46		Connection closed...
+2022-04-11/04:21:46		All the Data has been downloaded from the table olist
+2022-04-11/17:33:40		Data Load Successful
+2022-04-11/17:33:40		Train Test Split Successful
+2022-04-11/17:36:32		Model Training Successful
+2022-04-11/17:36:42		Classification report done
+2022-04-11/17:37:47		Saved as model.pkl successfully
+2022-04-11/17:39:59		Data Load Successful
+2022-04-11/17:39:59		Train Test Split Successful
+2022-04-11/17:43:31		Model Training Successful
+2022-04-11/17:43:39		Classification report done
+2022-04-11/17:43:59		Saved as model.pkl successfully
+2022-04-12/00:56:00		Data Load Successful
+2022-04-12/00:56:00		Train Test Split Successful
+2022-04-12/00:56:28		Model Training Successful
+2022-04-12/00:56:29		Classification report done
+2022-04-12/00:56:35		Saved as model.pkl successfully
+2022-04-12/00:58:53		Data Load Successful
+2022-04-12/00:58:53		Train Test Split Successful
+2022-04-12/00:59:04		Model Training Successful
+2022-04-12/00:59:05		Classification report done
+2022-04-12/00:59:07		Saved as model.pkl successfully
+2022-04-12/01:00:10		Data Load Successful
+2022-04-12/01:00:10		Train Test Split Successful
+2022-04-12/01:00:18		Model Training Successful
+2022-04-12/01:00:18		Classification report done
+2022-04-12/01:00:20		Saved as model.pkl successfully
+2022-04-12/01:01:03		Data Load Successful
+2022-04-12/01:01:03		Train Test Split Successful
+2022-04-12/01:01:11		Model Training Successful
+2022-04-12/01:01:11		Classification report done
+2022-04-12/01:01:12		Saved as model.pkl successfully
+2022-04-12/01:01:52		Data Load Successful
+2022-04-12/01:01:52		Train Test Split Successful
+2022-04-12/01:01:59		Model Training Successful
+2022-04-12/01:01:59		Classification report done
+2022-04-12/01:02:01		Saved as model.pkl successfully

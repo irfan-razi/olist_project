@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Market Basket Project</title>
+    <link rel="stylesheet" href="../static/styles/style.css">
+</head>
+
+<body>
+    <center>
+
+        <h1 style="font-size: 40px; color: rgb(9, 9, 156); text-align: center;">Prediction Result</h1>
+
+     {%if data == 5%}
+     <h1> Review Score is 5. Customer is Happy.. &#128522;</h1>
+
+     {%elif data == 4%}
+     <h1> Review Score is 4. Customer is Happy, but need improvement.. &#128522;</h1>
+	 
+	 {%elif data == 3%}
+     <h1> Review Score is 3. Customer is just satisfied..</h1>
+	 
+	 {%elif data == 2%}
+     <h1> Review Score is 2. Cutomer is not happy..</h1>
+	 
+	 {%elif data == 1%}
+     <h1> Review Score is 1. Customer is not happy at all..</h1>
+
+     {%endif%} 
+
+    </center>
+
+</body>
+
+<footer style="text-align: center">
+  <p>WebApp Designed and Maintained by Irfan Razi</p>
+</footer>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Market Basket Project</title>
+        <link rel="stylesheet" href="../static/styles/style.css">
+    </head>    
+    
+    <body>
+        <center>      
+
+           
+        <h1 style="font-size: 35px; color: rgb(9, 19, 156); text-align: center;"> Market Basket Project on E-Commerce</h1>
+        <h2 style="font-size:25px;">This web application predicts the review rating given by the customer.</h2>
+        <p style="font-size: large; font-family:'Times New Roman'; background-color: rgb(136, 215, 247);">Fill the following details and get your results</p> <br>
+
+
+        <form method='POST', action="{{url_for('prediction')}}">
+            
+            <label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="order_qty">Order Quantity:</label>
+            <input style="font-size: 15; padding:5px 15px; margin:5px;" type="number" name="order_qty" placeholder="enter" step="any"> <br><br>
+			
+			<label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="order_delivered_customer_time_in_days">Order delivered in days:</label>
+            <input style="font-size: 15; padding:5px 15px; margin:5px;" type="number" name="order_delivered_customer_time_in_days" placeholder="enter" step="any"> <br><br>
+            
+			<label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="total_payment">Total payment in $:</label>
+            <input style="font-size: 15; padding:5px 15px; margin:5px;" type="number" name="total_payment" placeholder="enter" step="any"> <br><br>
+			
+			<label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="order_purchase_year">Purchase Yr(2016-2018):</label>
+            <input style="font-size: 15; padding:5px 15px; margin:5px;" type="number" name="order_purchase_year" placeholder="enter" step="any"> <br><br>
+			
+			<label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="customer_seller_distance">Cust-Seller Dist.(km):</label>
+            <input style="font-size: 15; padding:5px 15px; margin:5px;" type="number" name="customer_seller_distance" placeholder="enter" step="any"> <br><br>
+			
+			<label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="product_weight">Weight of item (g):</label>
+            <input style="font-size: 15; padding:5px 15px; margin:5px;" type="number" name="product_weight" placeholder="enter" step="any"> <br><br>
+			
+			<label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="product_volume">Volume of item(cm-cube):</label>
+            <input style="font-size: 15; padding:5px 15px; margin:5px;" type="number" name="product_volume" placeholder="enter" step="any"> <br><br>
+
+            <label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="payment_installments">No of Installments:</label>
+            <input style="font-size: 15; padding:5px 15px; margin:5px;" type="number" name="payment_installments" placeholder="enter" step="any"> <br><br>
+           
+            <label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="payment_type_encoded">Payment mode:</label>
+            <select id="payment_type_encoded" name="payment_type_encoded" style="font-size: 15; padding:5px 15px; margin:5px;">
+            <option value="text">Select</option>
+            <option value="72878">Credit Card</option>
+			<option value="19111">Boleto</option>
+			<option value="2566">Vouchers</option>
+            <option value="1481">Debit Card</option></select><br><br>
+
+            <label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="product_category_name_english_encoded">Item Category:</label>
+            <select id="product_category_name_english_encoded" name="product_category_name_english_encoded" style="font-size: 15; padding:5px 15px; margin:5px;">
+            <option value="text">Select</option>
+            <option value="9217">bed bath table</option>
+			<option value="8705">health beauty</option>
+            <option value="7622">sports leisure</option>
+			<option value="6610">computer accessories</option>
+            <option value="6295">furniture decor</option>
+			<option value="5769">housewares</option>
+			<option value="5540">watches gifts</option>
+			<option value="4132">telephony</option>
+            <option value="3849">auto</option>
+			<option value="3788">toys</option>
+            <option value="3522">cool stuff</option>
+			<option value="3459">garden tools</option>
+			<option value="3124">perfumery</option>
+			<option value="2815">baby</option>
+            <option value="2431">electronics</option>
+			<option value="2269">stationery</option>
+            <option value="1840">fashion bags accessories</option>
+			<option value="1677">pet shop</option>
+			<option value="1252">office furniture</option>
+			<option value="1045">console games</option>
+            <option value="1019">luggage accessories</option>
+			<option value="757">home appliances</option>
+            <option value="725">construction tools</option>
+			<option value="618">small appliances</option>
+			<option value="616">musical instruments</option>
+			<option value="503">general book interest</option>
+            <option value="471">home construction</option>
+			<option value="437">food</option>
+            <option value="371">furniture living room</option>
+			<option value="351">home comfort</option>
+			<option value="343">audio</option>
+			<option value="288">drinks</option>
+            <option value="271">marketplace</option>
+			<option value="255">technical books</option>
+            <option value="247">air conditioning</option>
+			<option value="240">kitchen dining laundary garden furniture</option>
+			<option value="233">fashion shoes</option>
+			<option value="231">home appliances 2</option>
+            <option value="230">industry commerce & business</option>
+			<option value="224">construction tools lights</option>
+            <option value="223">food drinks</option>
+			<option value="212">fixed telephony</option>
+			<option value="194">art</option>
+			<option value="188">construction tools garden</option>
+            <option value="182">agro indusrty and commerce</option>
+			<option value="176">computers</option>
+            <option value="161">construction tools safety</option>
+			<option value="134">signaling and security</option>
+			<option value="125">christmas supplies</option>
+			<option value="120">fashion underwear beach</option>
+            <option value="111">fashion male clothing</option>
+			<option value="94">construction tools tools</option>
+            <option value="92">furniture bedroom</option>
+			<option value="76">tablets printing image</option>
+			<option value="75">small applainces home and cofffee</option>
+			<option value="65">cine photo</option>
+            <option value="57">DVDs Bluray</option>
+			<option value="53">books imported</option>
+            <option value="39">fashion female clothing</option>
+			<option value="39">party supplies</option>
+			<option value="38">music</option>
+			<option value="38">furniture mattress and upholstery</option>
+            <option value="27">flowers</option>
+			<option value="27">diapers and hygiene</option>
+            <option value="24">fashion sports</option>
+			<option value="23">home comfort 2</option>
+			<option value="21">arts and craftmanship</option>
+			<option value="12">CDs DVDs musicals</option>
+            <option value="11">cuisine</option>
+			<option value="6">fashion children cloths</option>
+            <option value="2">security and services</option></select> <br><br>
+			
+			<label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="order_status_encoded">Order Status:</label>
+            <select id="order_status_encoded" name="order_status_encoded" style="font-size: 15; padding:5px 15px; margin:5px;", step="any">
+            <option value="text">Select</option>
+            <option value="94019">Delivered</option>
+            <option value="1002">Shipped</option>
+			<option value="426">Cancelled</option>
+            <option value="298">Invoiced</option>
+			<option value="283">Processing</option>
+			<option value="6">Unavailable</option>
+			<option value="2">Approved</option></select><br><br>
+        
+            <label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="timing_encoded">Order Timing:</label>
+            <select id="timing_encoded" name="timing_encoded" style="font-size: 15; padding:5px 15px; margin:5px;", step="any">
+            <option value="text">Select</option>
+            <option value="21463">Morning (6am to 12pm)</option>
+            <option value="37046">Afternoon (12pm to 6pm)</option>
+			<option value="32966">Evening (6pm to 12am)</option>
+			<option value="4561">Midnight (12am to 6am)</option></select><br><br>
+			
+			<label style="font-size: large; background-color: rgb(21, 219, 245); padding:5px 15px; margin: 10px 5px 15px 5px;" for="Seasons_encoded">Season:</label>
+            <select id="Seasons_encoded" name="Seasons_encoded" style="font-size: 15; padding:5px 15px; margin:5px;">
+            <option value="text">Select</option>
+			<option value="28526">Winter (Novemeber-February)</option>
+			<option value="18601">Spring (March-April)</option>
+			<option value="19472">Summer (April-June)</option>
+			<option value="20562">Monsoon (June-August)</option>
+            <option value="8875">Autumn (September-October)</option></select><br><br>
+            
+            
+
+            <input type="submit" , value= 'Predict' style="font-size: larger; padding: 5px 15px;margin-top: 15px;"> <br><br></br>
+            <input type="reset" , value='Reset' style="padding: 5px 15px;margin-top: 15px;">
+        </form>
+       
+    </center>
+
+</body>
+
+<footer style="text-align: center">
+  <p>WebApp Designed and Maintained by Irfan Razi</p>
+</footer>
+
+</html>
